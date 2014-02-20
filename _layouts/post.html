@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+{% assign author = site.authors[page.author] %}
+
+<article class="entry">
+  <header style="padding: 1em 0; border-bottom: 1px solid #ddd; margin-bottom:2em;">
+   <h1>{{ page.title }}</h1>
+    <p class="byline" style="margin-bottom: 0;">
+     {{ page.date | date_to_string }}
+      • {{ author.display_name }}
+    </p> <!-- /.byline -->
+  </header>
+  <div class="post">
+  {{ content }}
+  </div>
+
+<!--  <footer>
+  <div class="contact">
+    <p>
+      {{ author.name }}<br />
+      <br />
+    </p>
+  </div>
+  <div class="contact">
+    <p>
+      <a href="https://github.com/{{ author.github }}">github.com/{{ author.github }}</a><br />
+      <a href="https://www.ub.uio.no/{{ author.uio }}">ub.uio.no/{{ author.uio }}</a><br />
+    </p>
+  </div>
+  </footer>-->
+</article>

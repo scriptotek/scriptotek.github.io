@@ -1,0 +1,21 @@
+name: Scriptoteket
+markdown: redcarpet
+url: http://localhost:4000
+site:
+  url: http://localhost:4000
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+paginate: 5
+# pygments: true
+authors:
+  dmheggo:
+    name: Dan Michael O. Heggø
+    display_name: Dan Michael
+    gravatar: c66919cb194f96c696c1da0c47354a6a
+    email: dmheggo@ub.uio.no
+    uio: personer/ureal/urealpublikum/dmheggo/
+    twitter: danmichaelo
+    github: danmichaelo

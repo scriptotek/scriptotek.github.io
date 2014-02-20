@@ -1,0 +1,72 @@
+---
+layout: default
+title: Scriptoteket
+---
+
+<p>
+  Scriptoteket er et åpent rom for uformelt utviklingsarbeid ved UiO Universitetsbiblioteket med venner. Ved Realfagsbiblioteket starta vi høsten 2012 et forum for å presentere og diskutere <a href="http://www.ub.uio.no/om/prosjekter/scriptotek/">små prosjekter</a> for å gjøre hverdagen i biblioteket litt enklere og morsommere.
+</p>
+
+<!--<p>
+  Scriptoteket representerer ideen om aktive brukere som er med å forme sine digitale verktøy direkte eller indirekte.
+</p>-->
+
+<!--
+<p>
+  Formålet med denne wikien er først og fremst å dokumentere større og mindre ting, og bidra til kunnskapsdisseminasjon.
+</p>
+-->
+
+<div id="home">
+  <h2>Post index</h2>
+
+  <ul>
+    {% for post in site.posts %}
+      <li>
+        <span>{{ post.date | date_to_string }}</span> &raquo; 
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+<!--
+  <h2>Reference</h2>
+  <ul class="posts">
+     <li>
+        <a href="pages/utviklingsserver.html">Utviklingsserver</a>
+     </li>
+     <li>
+        <a href="pages/katapi.html">Katalogdata fra Bibsys</a>
+     </li>
+     <li>
+        <a href="pages/primo.html">Primo/Alma : hvilke muligheter har vi?</a>
+     </li>
+     <li>
+        <a href="pages/bibduck.html">Bibduck</a>
+     </li>
+     <li>
+        <a href="pages/propagandasenter.html">Propagandasenter</a>
+     </li>
+    <li>
+        <a href="pages/bib-data.html">Å jobbe med bibliografiske data</a>
+     </li>
+    <li>
+        <a href="pages/dyplenking-oria.html">Dyplenking i Oria</a>
+     </li>
+  </ul>
+-->
+<!--
+  <p>
+   Test1: {{ site.url }}
+   Test2: {{ site.github.url }}
+
+   Test3: {% if site.github.url == nil %}{{ site.url }}{% else %}{{ site.github.url }}{% endif %}
+
+  </p>-->
+
+  <!--<ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>-->
+</div>

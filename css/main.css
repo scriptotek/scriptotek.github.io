@@ -1,0 +1,265 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  background-color: #fffff8;
+  color: #111111;
+  font: 13.34px Helvetica, Arial, sans-serif;
+  font-size: small;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-family: "Helvetica Neue",Helvetica,sans-serif;
+}
+h2, h3 {
+  margin-top: 1.2em;
+}
+
+.site .header {
+  background-image: url(/assets/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 10px 100px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.site .header h1 {
+  font-size: 2.8em;
+  padding: .6em;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight 600;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight 600;
+  margin-top:1.4em;
+  margin-bottom:1em;
+}
+h3 {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+h4 {
+  font-size: 1.2em;
+}
+
+p {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #444;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+ }
+
+a         { color: #00a; text-decoration: none; }
+a:hover   { color: #00f; }
+a:visited { color: #00a; text-decoration: none; }
+
+.examples a, a.example {
+  color: #00c;
+  padding: 0 .3em;
+  font-family: Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  font-size: .9em;
+  display: block;
+  background-color: #333;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  padding: .8em;
+  border-radius: 4px;
+}
+
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+.posts {
+  margin-bottom: 2em;
+}
+
+.posts li {
+  line-height: 1.75em;
+}
+
+.posts span {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  font-size: 115%;
+  max-width: 50em;
+  margin: 3em auto 2em;
+  line-height: 1.5em;
+  padding: 0 2em;
+}
+
+.header a {
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.site .header {
+  display:block;
+  margin-bottom: 2em;
+}
+
+.header a {
+  color: #a00;
+}
+
+.header a:hover {
+  color: #000;
+}
+
+.header a.extra {
+  color: #aaa;
+  margin-left: 1em;
+}
+
+.header a.extra:hover {
+  color: #000;
+}
+
+.meta {
+  color: #aaa;
+}
+
+footer {
+  font-size: 80%;
+  color: #666;
+  border-top: 4px solid #eee;
+  margin-top: 2em;
+  overflow: hidden;
+}
+
+footer .contact {
+  float: left;
+  margin-right: 3em;
+}
+
+footer .contact a {
+  color: #8085C1;
+}
+
+footer .rss {
+  margin-top: 1.1em;
+  margin-right: -.2em;
+  float: right;
+}
+
+footer .rss img {
+  border: 0;
+}
+
+ul {
+  margin: 1em 0 0 2em;
+}
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+/* standard */
+.post pre {
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  padding: .8em;
+  border-radius: 4px;
+  overflow:auto;
+}
+
+.post ul, .post ol {
+  margin-left: 1.35em;
+}
+
+.post code, .post pre {
+  /*border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #fafafa;*/
+  font-family: 'Roboto Mono', Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  font-size: 11px;
+  color: #666;
+  line-height: 1.2;
+}
+
+.post pre code {
+  border: none;
+}
+
+/* terminal */
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+.post pre.terminal code {
+  background-color: #333;
+}
+
+#post-nav {
+  padding: 3em 0;
+}
+#post-nav a.prev {
+  float: left; }
+
+#post-nav a.next {
+  float: right; }
+
+table {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5;
+  border-color: gray;
+  border-spacing: 2px;
+  font-size: 14px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-left: 4px solid #eee;
+}
+
+table th {
+  text-align: left;
+  color: #09091a;
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+table td {
+  border-bottom: 1px solid #d8d9d9;
+  border-left: 0;
+  border-right: 0;
+  border-top: 1px solid #d8d9d9;
+  padding: 12px 10px;
+  border-color: #e6e6e9;
+  color: #666;
+}
+
