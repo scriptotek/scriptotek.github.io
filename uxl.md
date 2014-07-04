@@ -1,11 +1,15 @@
 
-# Diskplass
+# Grunnleggende
+
+## Diskplass
 
 Har utvidet var til 14GB, også har jeg meldt inn den ekstradisken på 50 GB i volumgruppen internvg slik at dere i fremtiden selv kan få utvidet det dere måtte trenge ved å kjøre følgende:
 ```bash
 lvresize -L +10G /dev/mapper/internvg-var
 resize2fs /dev/mapper/internvg-var
 ```
+
+## IP-begrensning
 
 ```bash
 $ cat /etc/hosts.allow
@@ -21,41 +25,7 @@ $ cat /etc/redhat-release
 Red Hat Enterprise Linux Server release 6.5 (Santiago)
 ```
 
-
-```bash
-$ sudo yum list installed | grep php
-Failed to set locale, defaulting to C
-This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
-php.x86_64                           5.3.3-27.el6_5        @rhel-x86_64-server-6
-php-cli.x86_64                       5.3.3-27.el6_5        @rhel-x86_64-server-6
-php-common.x86_64                    5.3.3-27.el6_5        @rhel-x86_64-server-6
-php-gd.x86_64                        5.3.3-27.el6_5        @rhel-x86_64-server-6
-```
-
-
-```bash
-$ sudo yum list installed | grep uio
-Failed to set locale, defaulting to C
-This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
-laptop-detect.noarch                 0.13.7-4.el6          @uio-free           
-perl-Sys-Filesystem.noarch           1.400-1.el6           @uio-free           
-                                                           @uio-free           
-uio-cfengine.x86_64                  3.5.3-2.el6           @uio-free           
-uio-nagios-plugins.x86_64            0.17-1.el6            @uio-free           
-uio-priss-clients.x86_64             1.0.2-1.el6           @uio-free           
-uio-release.noarch                   6-2                   @/uio-release-6-2.noarch
-uio-selinux.noarch                   0.8-1.el6             @uio-free           
-uio-selinux-mail.noarch              0.8-1.el6             @uio-free           
-uio-server-utils.noarch              0.20-1.el6            @uio-free           
-uio-server-utils-dell.noarch         0.20-1.el6            @uio-free           
-uio-server-utils-hp.noarch           0.20-1.el6            @uio-free           
-uio-shell-settings.noarch            0.3-1.el6             @uio-free           
-uio-ssl-filelog.noarch               0.6.1-3.el6           @uio-free           
-uio-ssl-filelog-server.noarch        0.6.1-3.el6           @uio-free           
-uio-tools.noarch                     0.25-1.el6            @uio-free           
-uio-tsm-check.noarch                 1.4.4-1.el6           @uio-free
-```
-
+## Useful commands
 
 List the contents of a package
 
@@ -69,9 +39,26 @@ What packages provides a given command?
 sudo yum whatprovides setlocale
 ```
 
-Installere nyere PHP:
+# Programvare
+
+## PHP
+
+Pre-installert:
+
+```bash
+$ sudo yum list installed | grep php
+Failed to set locale, defaulting to C
+This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
+php.x86_64                           5.3.3-27.el6_5        @rhel-x86_64-server-6
+php-cli.x86_64                       5.3.3-27.el6_5        @rhel-x86_64-server-6
+php-common.x86_64                    5.3.3-27.el6_5        @rhel-x86_64-server-6
+php-gd.x86_64                        5.3.3-27.el6_5        @rhel-x86_64-server-6
+```
 
 We can find many rpm packages on the Internet. However, they all conflict with the php which comes with CentOS, so, we’d better build and install them from soure, this is not difficult, the point is to install php at different location.
+
+## Installere nyere PHP:
+
 
 ```bash
 sudo yum update
@@ -183,8 +170,6 @@ sudo ln -s /usr/local/php53/bin/php php53
 
 
 
-
-
 For å bruke php 5.3.28 fremfor 5.3.3 som standard:
 
 
@@ -206,15 +191,11 @@ Downloading...
 
 Composer successfully installed to: /usr/local/bin/composer
 Use it: php /usr/local/bin/composer
-
-Installere nodejs:
-
-Nyeste utgave er i epel, så:
-
-sudo yum install nodejs
+```
 
 2014-06-06 Baaah, vi fjerner PHP 5.3 og legger inn 5.5
 
+```
 sudo yum whatprovides php55
 sudo yum remove php53u-5.3.28-4.ius.el6.x86_64
 sudo yum remove php53u-cli-5.3.28-4.ius.el6.x86_64
@@ -222,21 +203,24 @@ sudo yum list installed | grep php
 sudo yum remove php53u-common.x86_64 php53u-gd.x86_64 php53u-imap.x86_64 php53u-ldap.x86_64 php53u-mysql.x86_64 php53u-pdo.x86_64 php53u-pgsql.x86_64 php53u-xml.x86_64
 sudo yum install php55u-5.5.12-2.ius.el6.x86_64
 sudo yum install php55-php-gd.x86_64 php55-php-mbstring.x86_64 php55-php-xml.x86_64 php55u-pecl-mongo.x86_64
+```
+
+## nodejs:
+
+Nyeste utgave er i epel, så:
+
+```
+sudo yum install nodejs
+```
+
+## mongodb
 
 Following http://docs.mongodb.org/manual/tutorial/install-mongodb-on-red-hat-centos-or-fedora-linux/
 Create /etc/yum.repos.d/mongodb.repo  and 
 
-
 [mongodb]name=MongoDB Repositorybaseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/gpgcheck=0enabled=1
 
-sudo yum install mongodb-org
-
-sudo service mongod start
-
-Tomt for diskplass på /var
-
 ```
-
-2014-06-06 Baah
-
-Usikker på hva som er best. Flere og flere php-pakker krever PHP 5.4, noe som utelukker kjøring på app.uio.no. Kan gjøre fra egen server kanskje, men får vi da Feide-pålogging på en enkel måte? Alternativt holde seg på 5.3, men da må jeg antakelig drive og patche pakker manuelt hvis det kommer viktige oppdateringer :( :(
+sudo yum install mongodb-org
+sudo service mongod start
+```
