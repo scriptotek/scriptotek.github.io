@@ -5,8 +5,8 @@
 
 Har utvidet var til 14GB, også har jeg meldt inn den ekstradisken på 50 GB i volumgruppen internvg slik at dere i fremtiden selv kan få utvidet det dere måtte trenge ved å kjøre følgende:
 ```bash
-lvresize -L +10G /dev/mapper/internvg-var
-resize2fs /dev/mapper/internvg-var
+$ lvresize -L +10G /dev/mapper/internvg-var
+$ resize2fs /dev/mapper/internvg-var
 ```
 
 ## IP-begrensning
@@ -30,13 +30,13 @@ Red Hat Enterprise Linux Server release 6.5 (Santiago)
 List the contents of a package
 
 ```bash
-repoquery -lq uio-tools.noarch
+$ repoquery -lq uio-tools.noarch
 ```
 
 What packages provides a given command?
 
 ```bash
-sudo yum whatprovides setlocale
+$ sudo yum whatprovides setlocale
 ```
 
 # Programvare
@@ -61,16 +61,16 @@ We can find many rpm packages on the Internet. However, they all conflict with t
 
 
 ```bash
-sudo yum update
+$ sudo yum update
 
-sudo yum install -y gcc git screen libxml2-devel bzip2-devel zlib-devel curl-devel libmcrypt-devel libjpeg-devel libpng-devel gd-devel mysql-devel postgresql-devel openldap-devel expat-devel libtool libtool-ltdl 
+$ sudo yum install -y gcc git screen libxml2-devel bzip2-devel zlib-devel curl-devel libmcrypt-devel libjpeg-devel libpng-devel gd-devel mysql-devel postgresql-devel openldap-devel expat-devel libtool libtool-ltdl 
 
-mkdir tmp
-cd tmp
-wget http://no1.php.net/get/php-5.3.28.tar.bz2/from/this/mirror
-mv mirror.1 php-5.3.28.tar.bz2
-tar -xvf php-5.3.28.tar.bz2
-cd php-5.3.28
+$ mkdir tmp
+$ cd tmp
+$ wget http://no1.php.net/get/php-5.3.28.tar.bz2/from/this/mirror
+$ mv mirror.1 php-5.3.28.tar.bz2
+$ tar -xvf php-5.3.28.tar.bz2
+$ cd php-5.3.28
 ```
 
 Following http://serverfault.com/a/214735
