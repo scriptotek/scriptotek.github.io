@@ -1,6 +1,11 @@
 
 # Grunnleggende
 
+```bash
+$ cat /etc/redhat-release
+Red Hat Enterprise Linux Server release 6.5 (Santiago)
+```
+
 ## Diskplass
 
 Har utvidet var til 14GB, også har jeg meldt inn den ekstradisken på 50 GB i volumgruppen internvg slik at dere i fremtiden selv kan få utvidet det dere måtte trenge ved å kjøre følgende:
@@ -18,11 +23,6 @@ ALL: localhost 127.0.0.1 [::1]
 
 # Allow everything from UiO
 ALL: 129.240. .uio.no [2001:700:100::]/40
-```
-
-```bash
-$ cat /etc/redhat-release
-Red Hat Enterprise Linux Server release 6.5 (Santiago)
 ```
 
 ## Useful commands
