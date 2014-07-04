@@ -8,7 +8,7 @@ Red Hat Enterprise Linux Server release 6.5 (Santiago)
 
 ## Diskplass
 
-Har utvidet var til 14GB, også har jeg meldt inn den ekstradisken på 50 GB i volumgruppen internvg slik at dere i fremtiden selv kan få utvidet det dere måtte trenge ved å kjøre følgende:
+Fra USIT: Har utvidet `/var` til 14GB, også har jeg meldt inn den ekstradisken på 50 GB i volumgruppen internvg slik at dere i fremtiden selv kan få utvidet det dere måtte trenge ved å kjøre følgende:
 ```bash
 $ lvresize -L +10G /dev/mapper/internvg-var
 $ resize2fs /dev/mapper/internvg-var
