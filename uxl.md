@@ -16,20 +16,25 @@ ALL: localhost 127.0.0.1 [::1]
 ALL: 129.240. .uio.no [2001:700:100::]/40
 ```
 
-cat /etc/redhat-release
+```bash
+$ cat /etc/redhat-release
 Red Hat Enterprise Linux Server release 6.5 (Santiago)
 ```
 
-sudo yum list installed | grep php
+
+```bash
+$ sudo yum list installed | grep php
 Failed to set locale, defaulting to C
 This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
 php.x86_64                           5.3.3-27.el6_5        @rhel-x86_64-server-6
 php-cli.x86_64                       5.3.3-27.el6_5        @rhel-x86_64-server-6
 php-common.x86_64                    5.3.3-27.el6_5        @rhel-x86_64-server-6
 php-gd.x86_64                        5.3.3-27.el6_5        @rhel-x86_64-server-6
+```
 
 
-sudo yum list installed | grep uio
+```bash
+$ sudo yum list installed | grep uio
 Failed to set locale, defaulting to C
 This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
 laptop-detect.noarch                 0.13.7-4.el6          @uio-free           
@@ -49,25 +54,27 @@ uio-ssl-filelog.noarch               0.6.1-3.el6           @uio-free
 uio-ssl-filelog-server.noarch        0.6.1-3.el6           @uio-free           
 uio-tools.noarch                     0.25-1.el6            @uio-free           
 uio-tsm-check.noarch                 1.4.4-1.el6           @uio-free
+```
 
 
 List the contents of a package
 
+```bash
 repoquery -lq uio-tools.noarch
-
+```
 
 What packages provides a given command?
 
+```bash
 sudo yum whatprovides setlocale
-
-
+```
 
 Installere nyere PHP:
 
-we can find many rpm packages on the Internet. However, they all conflict with the php which comes with CentOS, so, we’d better build and install them from soure, this is not difficult, the point is to install php at different location.
+We can find many rpm packages on the Internet. However, they all conflict with the php which comes with CentOS, so, we’d better build and install them from soure, this is not difficult, the point is to install php at different location.
 
+```bash
 sudo yum update
-
 
 sudo yum install -y gcc git screen libxml2-devel bzip2-devel zlib-devel curl-devel libmcrypt-devel libjpeg-devel libpng-devel gd-devel mysql-devel postgresql-devel openldap-devel expat-devel libtool libtool-ltdl 
 
@@ -77,10 +84,11 @@ wget http://no1.php.net/get/php-5.3.28.tar.bz2/from/this/mirror
 mv mirror.1 php-5.3.28.tar.bz2
 tar -xvf php-5.3.28.tar.bz2
 cd php-5.3.28
-
+```
 
 Following http://serverfault.com/a/214735
 
+```bash
 wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/epel-release-6-5.noarch.rpm
 wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/ius-release-1.0-11.ius.el6.noarch.rpm
 sudo rpm -Uvh ius-release*.rpm epel-release*.rpm
@@ -91,10 +99,10 @@ ius                                IUS Community Packages for Enterprise Linux 6
 uio-free                           UiO Free Packages for RHEL6 - x86_64                                            628
 uio-nonfree                        UiO Non-Free Packages for RHEL6 - x86_64                                        212
 vmware-tools                       VMware Tools 5.0 - x86_64                                                        46
+```
 
 
-
-
+```bash
 cd /usr/lib64
 sudo ln -s libltdl.so.7 libltdl.so
 
@@ -140,8 +148,10 @@ sudo ln -s libltdl.so.7 libltdl.so
 
 make
 make test
+```
 (a few tests failed)
 
+```
 sudo make install
 Installing PHP CLI binary:        /usr/local/php53/bin/
 Installing PHP CLI man page:      /usr/local/php53/man/man1/
@@ -225,22 +235,7 @@ sudo service mongod start
 
 Tomt for diskplass på /var
 
-
-df -k
-Filesystem           1K-blocks    Used Available Use% Mounted on
-/dev/mapper/internvg-root
-                      44381296 6123420  36003964  15% /
-tmpfs                   959228       0    959228   0% /dev/shm
-/dev/sda1               253871   91113    149651  38% /boot
-/dev/mapper/internvg-opt
-                       1032088  235792    743868  25% /opt
-/dev/mapper/internvg-tmp
-                       1032088   34072    945588   4% /tmp
-/dev/mapper/internvg-usr
-                       4128448 2605636   1313100  67% /usr
-/dev/mapper/internvg-var
-                       4128448  666288   3252448  18% /var
-
+```
 
 2014-06-06 Baah
 
