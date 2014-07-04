@@ -83,21 +83,14 @@ We can find many rpm packages on the Internet. However, they all conflict with t
 $ sudo yum update
 
 $ sudo yum install -y gcc git screen libxml2-devel bzip2-devel zlib-devel curl-devel libmcrypt-devel libjpeg-devel libpng-devel gd-devel mysql-devel postgresql-devel openldap-devel expat-devel libtool libtool-ltdl 
-
-$ mkdir tmp
-$ cd tmp
-$ wget http://no1.php.net/get/php-5.3.28.tar.bz2/from/this/mirror
-$ mv mirror.1 php-5.3.28.tar.bz2
-$ tar -xvf php-5.3.28.tar.bz2
-$ cd php-5.3.28
 ```
 
 Following http://serverfault.com/a/214735
 
 ```bash
-wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/epel-release-6-5.noarch.rpm
-wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/ius-release-1.0-11.ius.el6.noarch.rpm
-sudo rpm -Uvh ius-release*.rpm epel-release*.rpm
+$ wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/epel-release-6-5.noarch.rpm
+$ wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/ius-release-1.0-11.ius.el6.noarch.rpm
+$ sudo rpm -Uvh ius-release*.rpm epel-release*.rpm
 
 repo id                            repo name                                                                     status
 epel                               Extra Packages for Enterprise Linux 6 - x86_64                                10662
@@ -107,138 +100,45 @@ uio-nonfree                        UiO Non-Free Packages for RHEL6 - x86_64     
 vmware-tools                       VMware Tools 5.0 - x86_64                                                        46
 ```
 
+2014-06-06 Baaah, fjerner PHP 5.3 og legger inn 5.5
 
 ```bash
-cd /usr/lib64
-sudo ln -s libltdl.so.7 libltdl.so
-
-./configure --prefix=/usr/local/php53 \
-     --with-config-file-path=/etc/php53 \
-     --with-config-file-scan-dir=/etc/php53/php.d \
-     --with-libdir=lib64 \
-     --enable-mbstring \
-     --disable-debug \
-     --disable-rpath \
-     --with-bz2 \
-     --with-curl \
-     --with-gettext \
-     --with-iconv \
-     --with-openssl \
-     --with-gd \
-     --with-mcrypt \
-     --with-pcre-regex \
-     --with-zlib \
-     --enable-mbstring=all \
-     --enable-mbregex \
-     --enable-calendar \
-     --enable-cli \
-     --enable-zip \
-     --enable-exif \
-     --disable-cgi \
-     --disable-short-tags \
-     --with-curl=/usr/lib64 \
-     --with-freetype-dir=/usr/lib64 \
-     --with-gd \
-     --with-gettext \
-     --with-jpeg-dir=/usr/lib64 \
-     --with-ldap \
-     --with-libexpat-dir=/usr/lib64 \
-     --with-libxml-dir=/usr/lib64 \
-     --with-openssl \
-     --with-pgsql \
-     --with-png-dir=/usr/lib64 \
-     --with-zlib \
-     --with-pdo-pgsql \
-     --with-iconv \
-     --with-mcrypt
-
-make
-make test
+$ sudo yum whatprovides php55
+$ sudo yum remove php53u-5.3.28-4.ius.el6.x86_64
+$ sudo yum remove php53u-cli-5.3.28-4.ius.el6.x86_64
+$ sudo yum list installed | grep php
+$ sudo yum remove php53u-common.x86_64 php53u-gd.x86_64 php53u-imap.x86_64 php53u-ldap.x86_64 php53u-mysql.x86_64 php53u-pdo.x86_64 php53u-pgsql.x86_64 php53u-xml.x86_64
+$ sudo yum install php55u-5.5.12-2.ius.el6.x86_64
+$ sudo yum install php55-php-gd.x86_64 php55-php-mbstring.x86_64 php55-php-xml.x86_64 php55u-pecl-mongo.x86_64
 ```
-(a few tests failed)
 
-```
-sudo make install
-Installing PHP CLI binary:        /usr/local/php53/bin/
-Installing PHP CLI man page:      /usr/local/php53/man/man1/
-Installing build environment:     /usr/local/php53/lib/php/build/
-Installing header files:          /usr/local/php53/include/php/
-Installing helper programs:       /usr/local/php53/bin/
-  program: phpize
-  program: php-config
-Installing man pages:             /usr/local/php53/man/man1/
-  page: phpize.1
-  page: php-config.1
-Installing PEAR environment:      /usr/local/php53/lib/php/
-[PEAR] Archive_Tar    - installed: 1.3.11
-[PEAR] Console_Getopt - installed: 1.3.1
-warning: pear/PEAR requires package "pear/Structures_Graph" (recommended version 1.0.4)
-warning: pear/PEAR requires package "pear/XML_Util" (recommended version 1.2.1)
-[PEAR] PEAR           - installed: 1.9.4
-Wrote PEAR system config file at: /usr/local/php53/etc/pear.conf
-You may want to add: /usr/local/php53/lib/php to your php.ini include_path
-[PEAR] Structures_Graph- installed: 1.0.4
-[PEAR] XML_Util       - installed: 1.2.1
-/home/dmheggo/tmp/php-5.3.28/build/shtool install -c ext/phar/phar.phar /usr/local/php53/bin
-ln -s -f /usr/local/php53/bin/phar.phar /usr/local/php53/bin/phar
-Installing PDO headers:          /usr/local/php53/include/php/ext/pdo/
-
-
-cd /usr/local/bin
-sudo ln -s /usr/local/php53/bin/php php53
-
-
-
-For å bruke php 5.3.28 fremfor 5.3.3 som standard:
-
-
-echo 'path_prepend /usr/local/php53/bin/' >> .dotfiles/uxl
-echo 'uxl' >> .hostname
-cd .dotfiles
-git commit -m "Add uxl"
-git pull
-git push
+Merk at det er PHP 5.3. som kjører på app.uio.no, og USIT har ingen planer om å oppgradere, så vi bør beholde PHP 5.3-kompabilitet hvis det er mulig. Flere og flere pakker på Packagist krever imidlertid 5.4, så det er litt upraktisk...
 
 
 Installere composer:
 
-curl -sS https://getcomposer.org/installer | sudo /usr/local/php53/bin/php -- --install-dir=/usr/local/bin/ --filename=composer
-
-#!/usr/bin/env php
-All settings correct for using Composer
-Downloading...
-
-Composer successfully installed to: /usr/local/bin/composer
-Use it: php /usr/local/bin/composer
+```bash
+$ curl -sS https://getcomposer.org/installer | sudo /usr/local/php53/bin/php -- --install-dir=/usr/local/bin/ --filename=composer
 ```
 
-2014-06-06 Baaah, vi fjerner PHP 5.3 og legger inn 5.5
-
-```
-sudo yum whatprovides php55
-sudo yum remove php53u-5.3.28-4.ius.el6.x86_64
-sudo yum remove php53u-cli-5.3.28-4.ius.el6.x86_64
-sudo yum list installed | grep php
-sudo yum remove php53u-common.x86_64 php53u-gd.x86_64 php53u-imap.x86_64 php53u-ldap.x86_64 php53u-mysql.x86_64 php53u-pdo.x86_64 php53u-pgsql.x86_64 php53u-xml.x86_64
-sudo yum install php55u-5.5.12-2.ius.el6.x86_64
-sudo yum install php55-php-gd.x86_64 php55-php-mbstring.x86_64 php55-php-xml.x86_64 php55u-pecl-mongo.x86_64
-```
 
 ## nodejs:
 
 Nyeste utgave er i epel, så:
 
 ```
-sudo yum install nodejs
+$ sudo yum install nodejs
 ```
 
 ## mongodb
 
 Following http://docs.mongodb.org/manual/tutorial/install-mongodb-on-red-hat-centos-or-fedora-linux/
-Create /etc/yum.repos.d/mongodb.repo  and 
+Create `/etc/yum.repos.d/mongodb.repo` with 
 
+```
 [mongodb]name=MongoDB Repositorybaseurl=http://downloads-distro.mongodb.org/repo/redhat/os/x86_64/gpgcheck=0enabled=1
-
+```
+Then
 ```
 sudo yum install mongodb-org
 sudo service mongod start
