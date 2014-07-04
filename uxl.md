@@ -14,6 +14,25 @@ $ lvresize -L +10G /dev/mapper/internvg-var
 $ resize2fs /dev/mapper/internvg-var
 ```
 
+Sjekke diskplass:
+```bash
+$ df -kh
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/internvg-root
+                       43G  5.9G   35G  15% /
+tmpfs                 937M     0  937M   0% /dev/shm
+/dev/sda1             248M   85M  151M  36% /boot
+/dev/mapper/internvg-opt
+                     1008M  231M  727M  25% /opt
+/dev/mapper/internvg-tmp
+                     1008M   34M  924M   4% /tmp
+/dev/mapper/internvg-usr
+                      4.0G  2.6G  1.3G  68% /usr
+/dev/mapper/internvg-var
+                       14G  671M   13G   6% /var
+```
+Hovedpartisjonen er den øverste, på 43G.
+
 ## IP-begrensning
 
 ```bash
