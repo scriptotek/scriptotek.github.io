@@ -60,6 +60,14 @@ $ sudo yum whatprovides setlocale
 
 # Programvare
 
+Basics
+
+```bash
+$ sudo yum update
+
+$ sudo yum install -y gcc git screen libxml2-devel bzip2-devel zlib-devel curl-devel libmcrypt-devel libjpeg-devel libpng-devel gd-devel mysql-devel postgresql-devel openldap-devel expat-devel libtool libtool-ltdl 
+```
+
 ## PHP
 
 Pre-installert:
@@ -74,18 +82,7 @@ php-common.x86_64                    5.3.3-27.el6_5        @rhel-x86_64-server-6
 php-gd.x86_64                        5.3.3-27.el6_5        @rhel-x86_64-server-6
 ```
 
-We can find many rpm packages on the Internet. However, they all conflict with the php which comes with CentOS, so, we’d better build and install them from soure, this is not difficult, the point is to install php at different location.
-
-## Installere nyere PHP:
-
-
-```bash
-$ sudo yum update
-
-$ sudo yum install -y gcc git screen libxml2-devel bzip2-devel zlib-devel curl-devel libmcrypt-devel libjpeg-devel libpng-devel gd-devel mysql-devel postgresql-devel openldap-devel expat-devel libtool libtool-ltdl 
-```
-
-Following http://serverfault.com/a/214735
+Following [http://serverfault.com/a/214735](http://serverfault.com/a/214735),
 
 ```bash
 $ wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/epel-release-6-5.noarch.rpm
@@ -115,16 +112,16 @@ $ sudo yum install php55-php-gd.x86_64 php55-php-mbstring.x86_64 php55-php-xml.x
 Merk at det er PHP 5.3. som kjører på app.uio.no, og USIT har ingen planer om å oppgradere, så vi bør beholde PHP 5.3-kompabilitet hvis det er mulig. Flere og flere pakker på Packagist krever imidlertid 5.4, så det er litt upraktisk...
 
 
-Installere composer:
+Og legger inn composer
 
 ```bash
-$ curl -sS https://getcomposer.org/installer | sudo /usr/local/php53/bin/php -- --install-dir=/usr/local/bin/ --filename=composer
+$ curl -sS https://getcomposer.org/installer | sudo /usr/bin/php -- --install-dir=/usr/local/bin/ --filename=composer
 ```
 
 
 ## nodejs:
 
-Nyeste utgave er i epel, så:
+Nyeste utgave er i `epel`, som vi har lagt til, så
 
 ```
 $ sudo yum install nodejs
