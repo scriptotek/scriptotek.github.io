@@ -18,7 +18,7 @@ Ref: http://www.loc.gov/marc/bibliographic/bd008.html
 39(?)    : d [Cataloging source : Other]
 ```
 
-* Lengden er bare 24 tegn. 
+* Lengden er bare 23 tegn. 
   Hvor er tegn 18-34 (Material specific coded elements)?
   Det ser også litt ut som tegn 15-17 viser til noe annet enn "Place of publication, production, or execution".
 * 008/06 : "s" finnes ikke i listen over "type of date/publication status"[1](http://www.loc.gov/marc/bibliographic/bd008a.html)
@@ -38,7 +38,7 @@ Ref: http://www.loc.gov/marc/bibliographic/bd008.html
 39(?)    : d [Cataloging source : Other]
 ```
 
-* Overraskende er lengden på her 29 tegn, altså 5 tegn lenger enn i forrige eksempel...
+* Overraskende er lengden på her 28 tegn, altså 5 tegn lenger enn i forrige eksempel...
 * Det kan virke som man har inkludert 008/21 for å skille mellom tidsskrifter ("p"), aviser ("n"), flerbindsverk ("m") o.l., men hvorfor i posisjon 19??
 
 ### Test 3: [101482086](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:101482086), a CD
