@@ -1,28 +1,36 @@
+## Snodigheter i 008
 
-1) Snodigheter i 008
-
-http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:131381679
-
-```
-<marc:controlfield tag="008">130916s2011 000 u|eng d</marc:controlfield>
-00-14 : dates
-??-?? : 
-35-39 : language, cataloging source
-```
-
-a) 008/06 : s finnes ikke i listen over "type of date/publication status"
-http://www.loc.gov/marc/bibliographic/bd008a.html
-
-
-b) 008 er på 24 tegn, ikke 40. Det virker som man har hoppet over "18-34 - Material specific coded elements". Er det lov? Og er det lurt? Dette området kan brukes lurt! For "continuing resources" brukes f.eks. 008/21 for å skille mellom tidsskrifter ("p"), aviser ("n") og flerbindsverk ("m"). 
-
-c) For et e-tidsskrift, 080880762, er lengden 29 tegn!
+Test 1: [131381679](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:131381679), a printed book
 
 ```
-<marc:controlfield tag="008">110404uuuuuuuuu p o | 0eng d</marc:controlfield>
+008 : 130916s2011 000 u|eng d
+008/00-05 : 130916 [Date entered on file]
+008/06 : s [Type of date/Publication status: ???]
+008/07-10 : 2011 [Date 1]
+008/11-14 :  000 [Date 2]
+008/15-17 :  u| [???] 
+008/35-38 : eng [Language: English]
+008/39 : d [Cataloging source : Other]
+```
+
+* 008 skal være et felt med fast lengde 40 tegn, men har bare 24 tegn. 
+  Hvor er tegn 18-34 (Material specific coded elements)?
+  Det ser også litt ut som tegn 15-17 viser til noe annet enn "Place of publication, production, or execution".
+  Ref: http://www.loc.gov/marc/bibliographic/bd008.html
+
+* 008/06 : "s" finnes ikke i listen over "type of date/publication status"[1](http://www.loc.gov/marc/bibliographic/bd008a.html)
+
+
+Test 2: [080880762](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:080880762), an electronic journal
+
+Overraskende er lengden på 008 her 29 tegn, altså 5 tegn lenger.
+
+```
+008 : 110404uuuuuuuuu p o | 0eng d
 00-17 : dates 
-??-?? : gjetter at p står for 21: periodical og o for 23 form of item: online
+19 : Kan dette være 21: periodical ?
+21 : Kan dette være 23: online ?
 35-39 : language, cataloging source
 ```
 
-Her er lengden på 29 tegn
+* Her er lengden på 29 tegn. Det kan virke som man har inkludert 008/21 for å skille mellom tidsskrifter ("p"), aviser ("n"), flerbindsverk ("m") o.l., men hvorfor i posisjon 19??
