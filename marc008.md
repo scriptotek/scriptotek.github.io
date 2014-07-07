@@ -1,6 +1,6 @@
 ## MARC21 materials/forms/types
 
-### a) Language type material
+### Written material
 
 Type of material/form is encoded in [leader](http://www.loc.gov/marc/bibliographic/bdleader.html) (LDR),
 [006](http://www.loc.gov/marc/bibliographic/bd006.html), [007](http://www.loc.gov/marc/bibliographic/bd007.html)
@@ -68,6 +68,8 @@ LDR/07 : m [bibliographic level: Monograph/item]
 
 Note: Journal issues are treated the same way as books. We need to check if there is a series statement to distinguish between them.
 
+### Music
+
 #### [101482086](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:101482086), a musical CD (musikk-CD)
 
 ```
@@ -76,6 +78,8 @@ LDR/07 : m [bibliographic level: Monograph/item]
 007/00 : s [category of material: Sound recording]
 007/01 : d [specific material designation: Sound disc]
 ```
+
+### Video
 
 #### [122933095](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:122933095), a video DVD
 
