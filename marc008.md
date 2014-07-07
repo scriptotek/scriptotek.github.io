@@ -4,7 +4,7 @@
 
 Ref: http://www.loc.gov/marc/bibliographic/bd008.html
 
-### Test 1: [131381679](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:131381679), a printed book
+### Test 1: [131381679](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:131381679), en trykt bok
 
 008: `130916s2011 000 u|eng d` (23 tegn)
 
@@ -24,7 +24,7 @@ Ref: http://www.loc.gov/marc/bibliographic/bd008.html
 * 008/06 : "s" finnes ikke i listen over "type of date/publication status"[1](http://www.loc.gov/marc/bibliographic/bd008a.html)
 
 
-### Test 2: [080880762](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:080880762), an electronic journal
+### Test 2: [080880762](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:080880762), et e-tidsskrift
 
 008: `110404uuuuuuuuu p o | 0eng d` (28 tegn)
 ```
@@ -41,7 +41,7 @@ Ref: http://www.loc.gov/marc/bibliographic/bd008.html
 * Overraskende er lengden på her 28 tegn, altså 5 tegn lenger enn i forrige eksempel...
 * Det kan virke som man har inkludert 008/21 for å skille mellom tidsskrifter ("p"), aviser ("n"), flerbindsverk ("m") o.l., men hvorfor i posisjon 19??
 
-### Test 3: [101482086](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:101482086), a CD
+### Test 3: [101482086](http://oai.bibsys.no/oai/repository?verb=GetRecord&metadataPrefix=marcxchange&identifier=oai:bibsys.no:biblio:101482086), en CD
 
 008 `140613s2010 eng` (15 tegn)
 ```
