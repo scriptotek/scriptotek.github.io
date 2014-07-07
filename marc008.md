@@ -3,7 +3,7 @@
 ### a) Language type material
 
 Type of material/form is encoded in [leader](http://www.loc.gov/marc/bibliographic/bdleader.html) (LDR),
-[006](http://www.loc.gov/marc/bibliographic/bd006.html), [007](http://www.loc.gov/marc/bibliographic/bd007.html]
+[006](http://www.loc.gov/marc/bibliographic/bd006.html), [007](http://www.loc.gov/marc/bibliographic/bd007.html)
 and [008](http://www.loc.gov/marc/bibliographic/bd008.html). BIBSYS does not seem to use 006.
 
 
