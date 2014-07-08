@@ -140,3 +140,8 @@ Then
 sudo yum install mongodb-org
 sudo service mongod start
 ```
+
+## mysql
+
+Following: http://www.cyberciti.biz/faq/how-to-install-mysql-under-rhel/
+Minus the configuration part of the guide.
