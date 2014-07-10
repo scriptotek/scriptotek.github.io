@@ -118,6 +118,11 @@ Og legger inn composer
 $ curl -sS https://getcomposer.org/installer | sudo /usr/bin/php -- --install-dir=/usr/local/bin/ --filename=composer
 ```
 
+Siden vi trenger json:
+
+```bash
+sudo yum install php55u-pecl-jsonc-devel.x86_64
+```
 
 ## nodejs:
 
