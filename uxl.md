@@ -161,3 +161,38 @@ Minus the configuration part of the guide.
 
 Følger https://www.linode.com/docs/platform/longview/longview
 Bruker `https://yum-longview.linode.com/centos/6/noarch/` som baseurl i `/etc/yum.repos.d/longview.repo`
+
+## Apache-config
+
+For å sette opp en ny side la jeg inn
+```
+Alias /snorql /data/snorql/snorql
+<Directory /data/snorql/snorql>
+   Order allow,deny
+   Allow from all
+   Options +Indexes -MultiViews
+</Directory>
+```
+i `/etc/httpd/conf.d/snorql.conf`, men fikk bare permission denied. Viser seg at serveren har SELinux, som jeg aldri har vært borti før. 
+
+```bash
+$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /selinux
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy version:                 24
+Policy from config file:        targeted
+```
+Yup, it's on.
+
+```
+$ ls -Z /var/www/html
+-rw-r--r--  username username system_u:object_r:httpd_sys_content_t /var/www/html/index.html 
+```
+
+Så vi må sette samme security context på den nye mappen vår:
+```
+chcon -R --type=httpd_sys_content_t /data/snorql/snorql
+```
+
