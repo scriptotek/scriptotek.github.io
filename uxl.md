@@ -162,7 +162,7 @@ Minus the configuration part of the guide.
 Følger https://www.linode.com/docs/platform/longview/longview
 Bruker `https://yum-longview.linode.com/centos/6/noarch/` som baseurl i `/etc/yum.repos.d/longview.repo`
 
-## Apache-config
+## Apache-config og SELinux
 
 For å sette opp en ny side la jeg inn
 ```
@@ -196,3 +196,16 @@ Så vi må sette samme security context på den nye mappen vår:
 chcon -R --type=httpd_sys_content_t /data/snorql/snorql
 ```
 
+Videre ønsket jeg å tilgjengeliggjøre sparql-endpointet via Apache ved hjelp av ProxyPass (tips [herfra](http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtTipsAndTricksGuideSetApacheVirtuosoPortNumber)). 
+Legger dette i en ny fil `/etc/httpd/conf.d/virtuoso.conf`. Men igjen permission denied. `setenforce 0` og feilen forsvinner, så det er SELinux. Skrur på igjen med `setenforce 1`. [Denne bloggposten](http://www.linuxquestions.org/questions/blog/sag47-492023/selinux-and-apache-proxypass-34305/) gir tips om hvordan man finner de rette innstillingene.
+
+```
+cat /var/log/audit/audit.log | audit2allow -v
+# audit2allow will tell us what entries can be enabled to allow selinux to work
+setsebool httpd_can_network_connect on
+# Check that it work. Also check that SELinux is on
+getenforce
+# Then make change permanent after reboots:
+setsebool -P httpd_can_network_connect on
+```
+(kommandoen hang ganske lenge)
