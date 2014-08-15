@@ -209,3 +209,8 @@ getenforce
 setsebool -P httpd_can_network_connect on
 ```
 (kommandoen hang ganske lenge)
+
+== bash: fork: retry: Resource temporarily unavailable ==
+
+Jada, stadig nye overraskelser. Hva er dette for en feilmelding da? 
+
