@@ -156,3 +156,8 @@ sudo service mongod start
 
 Following: http://www.cyberciti.biz/faq/how-to-install-mysql-under-rhel/
 Minus the configuration part of the guide.
+
+## Longview
+
+Følger https://www.linode.com/docs/platform/longview/longview
+Bruker `https://yum-longview.linode.com/centos/6/noarch/` som baseurl i `/etc/yum.repos.d/longview.repo`
