@@ -217,6 +217,9 @@ cd /data
 git clone git://github.com/timrdf/csv2rdf4lod-automation.git
 cd csv2rdf4lod-automation
 ./install.sh
+
 ```
 (uten sudo)
 Legg til `source /data/csv2rdf4lod-automation/my-csv2rdf4lod-source-me.sh # http://purl.org/twc/id/software/csv2rdf4lod` to `~/.bashrc` (must be done per user)
+
+Installerer automatisk java, tidy, serdi, rapper, jena.
