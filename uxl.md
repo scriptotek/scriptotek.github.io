@@ -223,3 +223,20 @@ cd csv2rdf4lod-automation
 Legg til `source /data/csv2rdf4lod-automation/my-csv2rdf4lod-source-me.sh # http://purl.org/twc/id/software/csv2rdf4lod` to `~/.bashrc` (must be done per user)
 
 Installerer automatisk java, tidy, serdi, rapper, jena.
+
+## PERL
+
+Skal vi installere pakker lokalt eller globalt? Begynner lokalt:
+
+```
+cpan
+
+o conf make_install_make_command 'sudo make'
+o conf mbuild_install_build_command 'sudo ./Build' 
+o conf commit
+install CPAN
+reload CPAN
+install Bundle::LWP 
+install Term::ReadLine::Perl
+install YAML
+```
