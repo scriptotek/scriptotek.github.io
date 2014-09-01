@@ -33,6 +33,34 @@ tmpfs                 937M     0  937M   0% /dev/shm
 ```
 Hovedpartisjonen er den øverste, på 43G.
 
+2014-09-01:
+
+```bash
+$ sudo lvresize -L +5G /dev/mapper/internvg-usr
+  Extending logical volume usr to 9.00 GiB
+  Logical volume usr successfully resized
+$ sudo resize2fs /dev/mapper/internvg-usr
+resize2fs 1.41.12 (17-May-2010)
+Filesystem at /dev/mapper/internvg-usr is mounted on /usr; on-line resizing required
+old desc_blocks = 1, new_desc_blocks = 1
+Performing an on-line resize of /dev/mapper/internvg-usr to 2359296 (4k) blocks.
+The filesystem on /dev/mapper/internvg-usr is now 2359296 blocks long.
+$ df -k
+Filesystem           1K-blocks    Used Available Use% Mounted on
+/dev/mapper/internvg-root
+                      44381296 3035948  39091436   8% /
+tmpfs                   959224       0    959224   0% /dev/shm
+/dev/sda1               253871   91224    149540  38% /boot
+/dev/mapper/internvg-opt
+                       1032088  429828    549832  44% /opt
+/dev/mapper/internvg-tmp
+                       1032088   34076    945584   4% /tmp
+/dev/mapper/internvg-usr
+                       9289080 3512720   5304568  40% /usr
+/dev/mapper/internvg-var
+                      14449712  853624  12862216   7% /var
+```
+
 ## IP-begrensning
 
 ```bash
