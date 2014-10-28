@@ -269,6 +269,58 @@ install Term::ReadLine::Perl
 install YAML
 ```
 
+## Zorba installation notes
+
+Finnes ikke RedHat-pakke, så vi må bygge selv. Begynner med noen avhengigheter;
+```
+sudo yum install -y cmake gcc-c++ ncurses-devel libxml2 libcurl libxslt xerces-c flex bison libuuid-devel
+```
+ICU-versjonen i RedHat er for gammel, så den må vi bygge selv:
+```
+wget http://download.icu-project.org/files/icu4c/54.1/icu4c-54_1-src.tgz
+tar -xf icu4c-54_1-src.tgz
+cd icu/source
+./runConfigureICU Linux --with-library-bits=64
+make
+sudo make install
+```
+Samme med Xerces-C:
+```
+wget http://apache.uib.no//xerces/c/3/sources/xerces-c-3.1.1.tar.gz
+tar -xf xerces-c-3.1.1.tar.gz && cd xerces-c-3.1.1
+./configure --prefix=/opt/xerces-c-3.1.1
+make
+sudo make install
+```
+Og så var det endelig tid for Zorba:
+```
+wget https://github.com/28msec/zorba/releases/download/3.0/zorba-3.0.tar.gz
+tar -xf zorba-3.0.tar.gz
+cd zorba-3.0
+mkdir build
+cd build
+cmake -D ZORBA_SUPPRESS_SWIG=ON -D CMAKE_PREFIX_PATH=/opt/xerces-c-3.1.1 -D CMAKE_INSTALL_PREFIX=/opt/zorba-3.0 ..
+make
+sudo make install
+```
+
+Utdrag fra cmake-output:
+```
+-- Found LibXml2: /usr/lib64/libxml2.so (found version "2.7.6")
+-- Found LIBXML2 library -- /usr/lib64/libxml2.so
+-- Found ICU library -- /usr/local/lib/libicuuc.so
+-- Found ICU internationalization library -- /usr/local/lib/libicui18n.so
+-- Found ICU data library -- /usr/local/lib/libicudata.so
+-- Found ICU library -- /usr/local/lib/libicuuc.so
+-- SWIG is disabled => no language bindings are generated.
+-- CMAKE_INSTALL_PREFIX:                 /opt/zorba-3.0
+-- Found Xerces-C: /opt/xerces-c-3.1.1/lib/libxerces-c.so
+--               : /opt/xerces-c-3.1.1/include
+-- Found bison -- /usr/bin/bison, version: 2.4
+-- Found flex -- /usr/bin/flex, version: 2.5.35
+```
+Prøvde først uten `ZORBA_SUPPRESS_SWIG=ON`, men da feilet byggingen. Mulig det bare var noen Python-headere som ikke var installert, men jeg undersøkte ikke dette nærmere.
+
 ## Vi lager oss et prosjektrom
 
 ```
