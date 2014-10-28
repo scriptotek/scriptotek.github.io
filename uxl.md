@@ -323,7 +323,7 @@ Utdrag fra cmake-output:
 
 Til slutt, for å gjøre programmet tilgjengelig for alle, legger vi til bin-mappen i PATH som standard:
 
-    sudo sh -c 'echo "export PATH=$PATH:/opt/zorba-3.0/bin" > /etc/profile.d/zorba.sh'
+    sudo sh -c "echo 'export PATH=/opt/zorba-3.0/bin:\${PATH}' > /etc/profile.d/zorba.sh"
 
 ## Vi lager oss et prosjektrom
 
