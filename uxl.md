@@ -268,3 +268,13 @@ install Bundle::LWP
 install Term::ReadLine::Perl
 install YAML
 ```
+
+## Vi lager oss et prosjektrom
+
+```
+sudo mkdir /projects
+sudo chown dmheggo:ub /projects
+sudo chmod 0755 /projects
+```
+Alle brukere bør ha umask 002, slik at nye filer opprettes med skrivetilgang for gruppemedlemmer.
+
