@@ -319,7 +319,11 @@ Utdrag fra cmake-output:
 -- Found bison -- /usr/bin/bison, version: 2.4
 -- Found flex -- /usr/bin/flex, version: 2.5.35
 ```
-Prøvde først uten `ZORBA_SUPPRESS_SWIG=ON`, men da feilet byggingen. Mulig det bare var noen Python-headere som ikke var installert, men jeg undersøkte ikke dette nærmere.
+(Prøvde først uten `ZORBA_SUPPRESS_SWIG=ON`, men da feilet byggingen. Mulig det bare var noen Python-headere som ikke var installert, men jeg undersøkte ikke dette nærmere.)
+
+Til slutt, for å gjøre programmet tilgjengelig for alle, legger vi til bin-mappen i PATH som standard:
+
+    sudo sh -c 'echo "export PATH=$PATH:/opt/zorba-3.0/bin" > /etc/profile.d/zorba.sh'
 
 ## Vi lager oss et prosjektrom
 
