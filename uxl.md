@@ -325,6 +325,10 @@ Til slutt, for å gjøre programmet tilgjengelig for alle, legger vi til bin-map
 
     sudo sh -c "echo 'export PATH=/opt/zorba-3.0/bin:\${PATH}' > /etc/profile.d/zorba.sh"
 
+### Go
+
+Legger til i `/etc/bashrc`: `export GOPATH=/projects/go-packages`
+
 ## Vi lager oss et prosjektrom
 
 ```
