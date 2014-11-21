@@ -86,6 +86,12 @@ What packages provides a given command?
 $ sudo yum whatprovides setlocale
 ```
 
+Search for package
+
+```bash
+$ sudo yum search yaml
+```
+
 # Programvare
 
 Basics
@@ -135,7 +141,10 @@ $ sudo yum list installed | grep php
 $ sudo yum remove php53u-common.x86_64 php53u-gd.x86_64 php53u-imap.x86_64 php53u-ldap.x86_64 php53u-mysql.x86_64 php53u-pdo.x86_64 php53u-pgsql.x86_64 php53u-xml.x86_64
 $ sudo yum install php55u-5.5.12-2.ius.el6
 $ sudo yum install php55-php-gd php55-php-mbstring php55-php-xml php55u-pecl-mongo php55u-mcrypt php55u-pdo php55u-mysqlnd
+$ sudo yum install libyaml-devel php55u-devel
+$ sudo pecl install yaml
 ```
+(og opprett `/etc/php.d/20-yaml.ini`)
 
 Merk at det er PHP 5.3. som kjører på app.uio.no, og USIT har ingen planer om å oppgradere, så vi bør beholde PHP 5.3-kompabilitet hvis det er mulig. Flere og flere pakker på Packagist krever imidlertid 5.4, så det er litt upraktisk...
 
