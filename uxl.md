@@ -6,6 +6,14 @@ $ cat /etc/redhat-release
 Red Hat Enterprise Linux Server release 6.5 (Santiago)
 ```
 
+## Tidssone
+
+Sommertid/vintertid er upraktisk for cronjobber, så vi setter UTC-tid:
+```bash 
+$ sudo unlink /etc/localtime 
+$ sudo ln -s /usr/share/zoneinfo/UTC /etc/localtime
+```
+
 ## Diskplass
 
 Fra USIT: Har utvidet `/var` til 14GB, også har jeg meldt inn den ekstradisken på 50 GB i volumgruppen internvg slik at dere i fremtiden selv kan få utvidet det dere måtte trenge ved å kjøre følgende:
