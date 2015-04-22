@@ -1,7 +1,7 @@
 ## Scriptoteket
 *Dan Michael O. Heggø, Kyrre T. Låberg, Live H. Kvale, Line N. Akerholt, Maria Hammerstrøm*
 
-"Det må da være en enklere/bedre måte å løse dette på! Hva hvis…?" Fra Realfagsbiblioteket
+«Det må da være en enklere/bedre måte å løse dette på! Hva hvis…?» Fra Realfagsbiblioteket
 observerte vi i 2013 at det ved hele fire avdelingsbibliotek
 var utviklet enkle script og programmer lokalt, blant annet for å automatisere
 skrankerutiner. Vi tok initiativ til å danne et nettverk for å dele kode og konkrete
