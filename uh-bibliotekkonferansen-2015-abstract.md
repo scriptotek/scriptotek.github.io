@@ -4,9 +4,9 @@
 «Det må da være en enklere/bedre måte å løse dette på! Hva hvis…?» Fra Realfagsbiblioteket
 observerte vi i 2013 at det ved hele fire avdelingsbibliotek
 var utviklet enkle script og programmer lokalt, blant annet for å automatisere
-skrankerutiner. Vi tok initiativ til å danne et nettverk for å dele kode og konkrete
+skrankerutiner. Det ble tatt initiativ til å danne et nettverk for å dele kode og konkrete
 resultater, men også erfaringer og tips om for eksempel programmeringsgrensesnitt og
-rett verktøy til rett oppgave. Vi tror også at et nettverk kan bidra til å redusere
+rett verktøy til rett oppgave. Tanken var at et nettverk kan bidra til å redusere
 risikoen for at løsninger blir altfor avhengige av én bestemt person for å fungere.
 
 Scriptoteket er et løst, uformelt nettverk – alle som er opptatt av automatisering og
