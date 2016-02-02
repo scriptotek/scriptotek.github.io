@@ -1,5 +1,4 @@
 name: Scriptoteket
-markdown: redcarpet
 url: http://localhost:4000
 site:
   url: http://localhost:4000
