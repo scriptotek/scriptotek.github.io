@@ -8,6 +8,7 @@ comments: True
 ---
 
 I'm exploring the growing number of APIs at [Ex Libris Developer Network](https://developers.exlibrisgroup.com/). While JSON is supported, as you would expect from any modern API, it seems like it's threated a second class citizen to the extent that you *might* not want to use it – at least not with the Bib API… it's possible that the situation is better for other APIs.
+<!-- more -->
 
 While working on [a PHP client library](https://github.com/scriptotek/php-alma-client) for editing Alma Bib records in August, I found that I just could not save records when using JSON… but when switching to XML it worked. To my relief, someone else had already reported the issue on [the Developer Network forum](https://developers.exlibrisgroup.com/discussions#!/forum/posts/list/200.page) a few days before. After two months of waiting, Ex Libris replies that they will actually not fix this, but rather update the documentation to state that JSON is not supported for updating records. End of story.
 

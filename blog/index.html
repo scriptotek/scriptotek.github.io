@@ -1,10 +1,15 @@
 ---
 layout: default
 title: Scriptoteket
+redirect_from: "/"
 ---
 
 <p>
   Scriptoteket er et åpent rom for uformelt utviklingsarbeid ved UiO Universitetsbiblioteket med venner. Ved Realfagsbiblioteket starta vi høsten 2012 et forum for å presentere og diskutere <a href="http://www.ub.uio.no/om/prosjekter/scriptotek/">små prosjekter</a> for å gjøre hverdagen i biblioteket litt enklere og morsommere.
+</p>
+
+<p>
+  <a href="https://github.com/scriptotek/">Prosjekter på GitHub</a>
 </p>
 
 <!--<p>
@@ -18,16 +23,12 @@ title: Scriptoteket
 -->
 
 <div id="home">
-  <h2>Post index</h2>
 
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <span>{{ post.date | date_to_string }}</span> &raquo; 
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+{% for post in site.posts %}
+  <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <p class="post-meta">{{ post.date | date_to_string }}</p>
+  <p class="post-excerpt">{{ post.excerpt | strip_html }}&hellip; (<a href="{{ post.url }}">Read More</a>)</p>
+{% endfor %}
 
 <!--
   <h2>Reference</h2>

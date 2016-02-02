@@ -8,6 +8,7 @@ comments: True
 ---
 
 Hoot hoot – the Alma train is coming, so we should jump on and get familiar with the APIs it bring. Our ticket is an API key to [Developers Network](https://developers.exlibrisgroup.com/dashboard/application), and to get it you should send an email to Bibsys (or just ask me if you're at UBO).
+<!-- more -->
 
 Open up a terminal and store the key in a variable. At the same time, let's also create a variable to hold the MMS id of a bibliographic record we're interested in (the MMS id is the identifier that identifies a bibliographic record in Alma):
 

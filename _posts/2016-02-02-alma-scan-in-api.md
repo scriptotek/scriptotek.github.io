@@ -7,7 +7,7 @@ categories: alma api
 comments: True
 ---
 
-Some way we ended up in a situation with a few thousand items stuck with status ‘in transit’ in Alma. Manually having to scan-in all the items was out of question. Scan-in API to the rescue! The API is documented quite well both in the [API documentation](https://developers.exlibrisgroup.com/alma/apis/bibs/POST/gwPcGly021om4RTvtjbPleCklCGxeYAfEqJOcQOaLEvNcHQT0/ozqu3DGTurs/Xx+GZLELMQamEGJL0f6Mjkdw==/af2fb69d-64f4-42bc-bb05-d8a0ae56936e) and in an [Ex Libris blog post](https://developers.exlibrisgroup.com/blog/Scan-in-and-Next-Step-APIs).
+Some way we ended up in a situation with a few thousand items stuck with status ‘in transit’ in Alma. Manually having to scan-in all the items was out of question. Scan-in API to the rescue! <!-- more --> The API is documented quite well both in the [API documentation](https://developers.exlibrisgroup.com/alma/apis/bibs/POST/gwPcGly021om4RTvtjbPleCklCGxeYAfEqJOcQOaLEvNcHQT0/ozqu3DGTurs/Xx+GZLELMQamEGJL0f6Mjkdw==/af2fb69d-64f4-42bc-bb05-d8a0ae56936e) and in an [Ex Libris blog post](https://developers.exlibrisgroup.com/blog/Scan-in-and-Next-Step-APIs).
 
 First we prepared a plain text file with the barcodes for all the items, one barcode per line. Then we just needed a few lines of Python to read in the barcodes and do the API calls. Since the scan-in API itself requires item IDs, not barcodes, we also had to lookup the item ID for each barcode.
 

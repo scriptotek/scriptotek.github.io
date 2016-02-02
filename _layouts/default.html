@@ -6,6 +6,9 @@
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
 
+        <!-- RSS -->
+        <link rel="alternate" type="application/atom+xml" title="{{ site.name }} — Feed" href="{{ site.url }}/blog/feed.xml" />
+
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
 
@@ -19,7 +22,7 @@
 
         <div class="site">
           <div class="header">
-            <h1><a href="/">{{ site.name }}</a></h1>
+            <h1><a href="/blog/">{{ site.name }}</a></h1>
           </div>
 
           {{ content }}
