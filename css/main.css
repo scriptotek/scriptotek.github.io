@@ -26,6 +26,9 @@ h1, h2, h3, h4, h5, h6 {
 h2, h3 {
   margin-top: 1.2em;
 }
+.byline {
+  font-size:.85em;
+}
 
 .site .header {
   background-image: url(/assets/logo.png);
