@@ -3,7 +3,7 @@ layout: post
 title:  "Alma batch scan-in with Python"
 author: dmheggo
 date:   2016-02-02 17:02:00
-categories: alma api
+categories: alma api python
 comments: True
 ---
 
@@ -28,10 +28,13 @@ scan_in_params = {
 We also define the URLs we need, using [named placeholders](https://pyformat.info/#named_placeholders):
 
 ```python
-base_url = 'https://api-na.hosted.exlibrisgroup.com/almaws/v1'
+base_url = 'https://api-eu.hosted.exlibrisgroup.com/almaws/v1'
 barcode_api = base_url + '/items?item_barcode={barcode}'
 item_api = base_url + '/bibs/{mms_id}/holdings/{holding_id}/items/{item_id}'
 ```
+
+Note that we're using the European API gateway `api-eu`, not the North American
+`api-na` that is used in the examples in the API documentation.
 
 Whenever you need to send some headers with every request, it's quite handy
 to create a `Session` object and specify them there. In our case, we'll need
@@ -48,6 +51,7 @@ session.headers.update({
 
 Then we're ready for the fun part: reading the barcode list file,
 looping over all the lines and doing the actual API requests:
+
 
 ```python
 with open('barcodes.txt', 'r') as fp:
