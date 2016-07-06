@@ -17,8 +17,8 @@ bibliotekssystem og mye annet.
 
 - **E-postliste**
 
-  [Meld deg på](https://sympa.uio.no/ub.uio.no/subscribe/scriptotek) epost-
-  lista vår hvis du er interessert i å diskutere kodeprosjekter, ønsker
+  [Meld deg på](https://sympa.uio.no/ub.uio.no/subscribe/scriptotek) epost-lista
+  vår hvis du er interessert i å diskutere kodeprosjekter, ønsker
   informasjon om workshops (library carpentry) og andre arrangementer, eller
   bare føler deg som en scriptotekar. Lista har lav trafikk og alle er
   velkomne.

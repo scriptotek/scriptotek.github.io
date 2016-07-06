@@ -15,12 +15,18 @@ html, body { height: 100%; }
 body {
   background-color: #eee;
   color: #111111;
-  font: 16px Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+
+strong {
+  font-weight: 500;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
-  font-family: "Helvetica Neue",Helvetica,sans-serif;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 h2, h3 {
   margin-top: 1.2em;
@@ -30,18 +36,23 @@ h2, h3 {
 }
 .site {
   background-color: #fff;
-  box-shadow: 2px 2px 10px #ccc;
+  box-shadow: 2px 2px 3px #ccc;
 }
 
-.site .header {
-  background-image: url(/assets/logo.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 10px 70px;
+.header {
+    background-color: white;
+    padding: .8rem 6rem .8rem 2.5rem;
+    box-shadow: 0 0 3px #aaa;
 }
-.site .header h1 {
-  font-size: 2.0rem;
-  padding: .6rem;
+.header ul {
+  float:right; list-style-type: none; margin: .6rem 0;
+}
+.header li {
+  float: right; padding: 0 5px;
+}
+.header h1 {
+  font-size: 1.6rem;
+  padding: 0.6rem 0;
 }
 
 h1 {
@@ -110,6 +121,10 @@ a:hover   { color: #264773; }
   .github-corner {
     display: none;
   }
+  .header {
+    background-color: white;
+    padding-right: 2.5rem;
+  }
 }
 @media (max-width:500px){
   .github-corner:hover .octo-arm{
@@ -155,23 +170,19 @@ abbr {
   margin: 0;
   max-width: 50rem;
   line-height: 1.5em;
-  padding: 2rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   box-sizing: border-box;
 }
 
 @media only screen and (min-width: 50rem) {
   .site {
     margin: 2.5rem auto 2rem;
+    padding: 2rem 2.5rem;
   }
 }
 .header a {
   font-weight: 400;
   text-decoration: none;
-}
-
-.site .header {
-  display:block;
-  margin-bottom: 2em;
 }
 
 .header a {
@@ -250,7 +261,7 @@ ul {
   border-radius: 3px;
   background-color: #fafafa;*/
   font-family: 'Roboto Mono', Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-  font-size: 11px;
+  font-size: 80%;
   color: #666;
   line-height: 1.2;
 }
