@@ -1,26 +1,7 @@
 ---
 layout: default
 title: Scriptoteket
-redirect_from: "/"
 ---
-
-<p>
-  Scriptoteket er et åpent rom for uformelt utviklingsarbeid ved UiO Universitetsbiblioteket med venner. Ved Realfagsbiblioteket starta vi høsten 2012 et forum for å presentere og diskutere <a href="http://www.ub.uio.no/om/prosjekter/scriptotek/">små prosjekter</a> for å gjøre hverdagen i biblioteket litt enklere og morsommere.
-</p>
-
-<p>
-  <a href="https://github.com/scriptotek/">Prosjekter på GitHub</a>
-</p>
-
-<!--<p>
-  Scriptoteket representerer ideen om aktive brukere som er med å forme sine digitale verktøy direkte eller indirekte.
-</p>-->
-
-<!--
-<p>
-  Formålet med denne wikien er først og fremst å dokumentere større og mindre ting, og bidra til kunnskapsdisseminasjon.
-</p>
--->
 
 <div id="home">
 

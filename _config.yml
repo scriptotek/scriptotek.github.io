@@ -4,6 +4,7 @@ site:
   url: http://localhost:4000
 permalink: /blog/:year/:month/:day/:title.html
 excerpt_separator: "<!-- more -->"
+markdown: kramdown
 gems:
   - jekyll-feed
   - jekyll-paginate
