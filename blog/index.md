@@ -1,7 +1,11 @@
 ---
 layout: default
-title: Scriptoteket
+title: Scriptoteket - Blog
 ---
+
+<p>
+  <a href="/">home</a> » blog
+</p>
 
 <div id="home">
 
