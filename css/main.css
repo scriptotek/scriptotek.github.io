@@ -15,8 +15,7 @@ html, body { height: 100%; }
 body {
   background-color: #eee;
   color: #111111;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
+  font: 16px Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -154,18 +153,17 @@ abbr {
 }
 .site {
   margin: 0;
-  max-width: 40rem;
+  max-width: 50rem;
   line-height: 1.5em;
-  padding: 1.5rem 2rem;
+  padding: 2rem 2.5rem;
   box-sizing: border-box;
 }
 
-@media only screen and (min-width: 40rem) {
+@media only screen and (min-width: 50rem) {
   .site {
     margin: 2.5rem auto 2rem;
   }
 }
-
 .header a {
   font-weight: 400;
   text-decoration: none;
