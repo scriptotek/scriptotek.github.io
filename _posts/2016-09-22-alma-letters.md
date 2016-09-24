@@ -106,6 +106,6 @@ seem to be the title and the POL-ID, which isn't searchable in Primo.
 There's just not much data in the XML to support one. It's quite
 surprising that Alma and Primo, two products from the same company, aren't
 better integrated.-->
-Also, there's some odd data quality issues in this example that cannot be fixed
+Also, there are some odd data quality issues in this example that cannot be fixed
 by a template, like why is the isbn part of the title field..? Oh well, just
 another day with Alma.
