@@ -35,8 +35,9 @@ bibliotekssystem og mye annet.
   beta](https://scriptotek.github.io/2016-03-17-BS/) ([ressurs-
   side](https://scriptotek.github.io/2016-03-17-BS/slides/)), inspirert av
   [Software Carpentry](http://software-carpentry.org/) og [Library
-  Carpentry](https://librarycarpentry.github.io/). Vi håper å kunne følge opp
-  med mer sløyd til høsten!
+  Carpentry](https://librarycarpentry.github.io/). Siden har vi fulgt opp med
+  en Library Carpentry og en Data Processing & Visualization workshop.
+  [Les mer](http://www.ub.uio.no/kurs-arrangement/kurs/enkeltstaende/bibsloid/).
 
 - **Blogg**
 
