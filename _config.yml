@@ -5,7 +5,7 @@ site:
 permalink: /blog/:year/:month/:day/:title.html
 excerpt_separator: "<!-- more -->"
 markdown: kramdown
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-redirect-from
